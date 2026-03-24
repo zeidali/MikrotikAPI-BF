@@ -21,7 +21,7 @@ Advanced CLI toolkit for security testing of Mikrotik RouterOS and CHR. It perfo
 - Custom ports supported per service (e.g., `--validate ssh=2222`)
 
 ### 🔄 Persistent Sessions
-- Resume from the behavior attempt, JtR-like behavior
+- Resume from the last attempt, JtR-like behavior
 - Duplicate test avoidance for the same target/services/wordlist
 - ETA calculation based on average attempt time
 - Session listing and inspection
@@ -78,16 +78,17 @@ python mikrotikapi-bf-v2.1.py --help
 ```
 
 # Install on Termux
+```bash
 pkg update && pkg upgrade
-
 # Install essential build tools
 pkg install python rust clang make cmake llvm lld binutils libffi openssl libsodium pkg-config build-essential libcompiler-rt -y
-
 # Upgrade pip first
 pip install --upgrade pip setuptools wheel
-
 # Install the remaining packages
-pip install cryptography bcrypt requests paramiko beautifulsoup4 colorama PySocks pytest urllib3 pyyaml pynacInstall� Services Tested and Why Winbox/WebFig Are Not
+pip install cryptography bcrypt requests paramiko beautifulsoup4 colorama PySocks pytest urllib3 pyyaml pynacl
+```
+
+## 🧭 Services Tested and Why Winbox/WebFig Are Not
 
 ### Supported services (tested correctly)
 - API (8728) — binary login via `_api.py`
